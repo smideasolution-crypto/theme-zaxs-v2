@@ -289,7 +289,6 @@ function initReveal() {
     ".zaxs-statement",
     ".zaxs-why",
     ".zaxs-story",
-    ".zaxs-ugc",
     ".zaxs-faq",
     ".zaxs-sec-head",
     ".zaxs-look",

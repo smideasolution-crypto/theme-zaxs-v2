@@ -1,7 +1,8 @@
 <article class="zaxs-look__card is-shop">
   <div class="zaxs-look__media">
     <a class="zaxs-look__hit" data-zaxs-shop href="{{ href|default(shop) }}">
-      <img class="zaxs-look__front" src="{{ img }}" alt="{{ name }}" width="900" height="1100" loading="lazy">
+      <img class="zaxs-look__front" src="{{ img }}" alt="{{ name }}" width="900" height="1200" loading="lazy">
+      <img class="zaxs-look__back" src="{{ back|default(img) }}" alt="" width="900" height="1200" loading="lazy">
     </a>
     <span class="zaxs-look__heart" aria-hidden="true">♡</span>
   </div>
