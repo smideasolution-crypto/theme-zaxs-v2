@@ -130,10 +130,10 @@ footer.store-footer,
 .zaxs-statement img{width:100%;height:64vh;object-fit:cover;object-position:50% 30%}
 .zaxs-block{padding:64px 0;scroll-margin-top:96px}
 .zaxs-block--light{background:#f3eee4;color:#0b0b0b}
-.zaxs-sec-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:.2rem 1.5rem;margin-bottom:1.5rem}
-.zaxs-sec-head h2{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:600;margin:0}
-.zaxs-sec-head p{grid-column:1;color:#6b665c;margin:.3rem 0 0}
-.zaxs-sec-head a{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;color:#3a4126;font-weight:600;text-decoration:none}
+.zaxs-sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.35rem}
+.zaxs-sec-head h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0;line-height:1.2}
+.zaxs-sec-head p{color:#5c574c;margin:.35rem 0 0;font-size:1.02rem}
+.zaxs-sec-head a{flex:0 0 auto;color:#2a301c;font-weight:700;text-decoration:none;white-space:nowrap;border-bottom:1px solid #2a301c;padding-bottom:2px}
 .zaxs-focus{display:grid;grid-template-columns:1fr .9fr;background:#0f0f0c;color:#f3eee4}
 .zaxs-focus__visual{background:#e4dccf;min-height:56vh;position:relative}
 .zaxs-focus__visual img{width:100%;height:56vh;object-fit:contain;object-position:center;padding:7% 10%;min-height:0;display:block}
@@ -312,8 +312,7 @@ footer.store-footer.zaxs-footer{
   .zaxs-ugc__track{gap:10px;animation-duration:48s}
   .zaxs-ugc__track figure{flex-basis:72vw;max-width:280px}
   .zaxs-look,.zaxs-palette__row{grid-template-columns:repeat(2,1fr)}
-  .zaxs-sec-head{grid-template-columns:1fr}
-  .zaxs-sec-head a{grid-column:1;grid-row:auto;margin-top:.7rem}
+  .zaxs-sec-head{align-items:flex-start;flex-direction:column;gap:.35rem}
   .theme-zaxs .zaxs-footer__grid{grid-template-columns:1fr}
   .theme-zaxs .header-search{display:none}
   .theme-zaxs{--header-h:56px;--announce-h:28px}
@@ -341,7 +340,7 @@ footer.store-footer.zaxs-footer{
 .theme-zaxs .zaxs-block .s-products-list-wrapper > *:nth-child(n+5){display:none}
 .theme-zaxs .icon-btn,.theme-zaxs .mburger{min-width:44px;min-height:44px}
 
-.zaxs-look{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 16px}
+.zaxs-look{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 18px}
 .zaxs-palette{background:#12140e;color:#f3eee4;padding:64px 0;transition:background .7s cubic-bezier(.16,1,.3,1);position:relative;z-index:0;overflow:hidden}
 .zaxs-palette h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:.3rem 0 8px;line-height:1.35}
 .zaxs-palette > .container > p{color:#b7b0a3;margin-bottom:28px;line-height:1.6}
@@ -657,9 +656,21 @@ html,body#app,.theme-zaxs,.theme-zaxs .app-inner{overflow:visible!important;tran
 .zaxs-look__card{display:block;color:#0b0b0b;background:transparent;transition:transform .45s}
 .zaxs-look__card:hover{transform:translateY(-6px)}
 .zaxs-look__card.is-plain:hover{transform:none}
-.zaxs-look__card.is-plain .zaxs-look__front{padding:0;object-fit:cover;object-position:center 12%}
-.zaxs-look__card.is-plain:hover .zaxs-look__front{opacity:1;transform:none}
-.zaxs-look__media{position:relative;background:#f7f4ee;border:0;aspect-ratio:3/4;overflow:hidden}
+.zaxs-look__card.is-plain .zaxs-look__front,
+.zaxs-look__card.is-plain:hover .zaxs-look__front{
+  padding:0;opacity:1;object-fit:cover;object-position:center 8%;
+  width:178%;height:178%;max-width:none;inset:auto;top:-2%;
+  left:50%;right:auto;transform:translateX(-50%);background:#fff
+}
+.zaxs-look__card.is-plain.is-bust .zaxs-look__front,
+.zaxs-look__card.is-plain.is-bust:hover .zaxs-look__front{
+  width:148%;height:148%;top:0;object-position:center 18%
+}
+.zaxs-look__card.is-plain.is-waist .zaxs-look__front,
+.zaxs-look__card.is-plain.is-waist:hover .zaxs-look__front{
+  width:155%;height:155%;top:-4%;object-position:center 42%
+}
+.zaxs-look__media{position:relative;background:#fff;border:0;aspect-ratio:3/4;overflow:hidden}
 .zaxs-look__hit{display:block;position:absolute;inset:0;z-index:1}
 .zaxs-look__front,.zaxs-look__back{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8% 8% 36%;
@@ -691,7 +702,8 @@ html,body#app,.theme-zaxs,.theme-zaxs .app-inner{overflow:visible!important;tran
   padding:14px 2px 0;background:transparent;text-decoration:none;color:inherit
 }
 .zaxs-look__names{display:flex;flex-direction:column;gap:4px;min-width:0}
-.zaxs-look__names b{font-size:15px;line-height:1.4;font-weight:650}
+.zaxs-look__names b{font-size:15px;line-height:1.35;font-weight:600}
+.zaxs-look__tone{display:block;margin-top:3px;font-style:normal;font-size:18px;line-height:1.3;font-weight:700;color:#1c140f}
 .zaxs-look__en{display:block;font-style:normal;font-size:11px;letter-spacing:.14em;color:#6b665c;line-height:1.4}
 .zaxs-look__price{font-size:14px;line-height:1.35;white-space:nowrap;color:#0b0b0b}
 
