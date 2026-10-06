@@ -1,0 +1,40 @@
+
+// Colors
+$main-color: var(--color-primary);
+$infinte-color: var(--infinte-color);
+$main-text-color: var(--main-text-color);
+
+:root {
+  --infinte-color: #c9c9c9;
+  --main-text-color: #1a1c14;
+  --main-text-color-dark: #14160f;
+
+  /* ZAXS brand defaults — Salla store color still overrides --color-primary in master.twig */
+  --color-primary: #545b3c;
+  --color-primary-d: #3e4530;
+  --color-primary-l: #6b7349;
+  --color-primary-reverse: #f4f0e4;
+  --color-text: #6a6d5c;
+  --bg-gray: #c6c7ce1a;
+  --color-grey: #f3efe3;
+  --color-light-grey: #e8e3d4;
+
+  --zaxs-olive-950: #14160f;
+  --zaxs-olive-900: #1c1f15;
+  --zaxs-olive-800: #2a2f20;
+  --zaxs-olive-700: #3e4530;
+  --zaxs-olive-600: #545b3c;
+  --zaxs-olive-500: #6b7349;
+  --zaxs-sage: #8b8f62;
+  --zaxs-ivory: #f4f0e4;
+  --zaxs-paper: #faf7ef;
+  --zaxs-ink: #1a1c14;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  /* font-size */
+  --font-sm: 0.8685714286rem;
+  /* font-family: ; */
+  --font-main: "DINNextLTArabic";
+
+  /* plugins */
+  --mm-ocd-width: calc(100% - 51px);
+}

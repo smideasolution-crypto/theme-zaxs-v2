@@ -1,0 +1,18 @@
+{#
+| Variable           | Type   | Description                    |
+|--------------------|--------|--------------------------------|
+| component.kicker   | string | Small section label            |
+| component.heading  | string | Editorial heading              |
+| component.body     | string | Editorial paragraph            |
+#}
+<section component-id="{{ componentId }}" class="zaxs-editorial" data-testid="store-home-zaxs-editorial">
+    <div class="zaxs-editorial__inner">
+        {% if component.kicker %}
+            <p class="zaxs-editorial__kicker">{{ component.kicker }}</p>
+        {% endif %}
+        <h2 class="zaxs-editorial__heading">{{ component.heading }}</h2>
+        {% if component.body %}
+            <p class="zaxs-editorial__body">{{ component.body }}</p>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<footer data-testid="store-footer" class="store-footer zaxs-footer">
+	<div class="container zaxs-foot">
+		<div class="zaxs-foot__brand">
+			<a href="{{ link('/') }}" class="zaxs-foot__logo">
+				<img src="{{ 'images/zaxs/zaxs-logo.png'|asset }}" alt="ZAXS" width="140" height="36">
+			</a>
+			<p>MADE FOR YOU.</p>
+			<p class="zaxs-foot__city">الرياض · السعودية</p>
+			<form class="zaxs-news" data-zaxs-news>
+				<label for="zaxs-news">الإصدار الجاي؟</label>
+				<div>
+					<input id="zaxs-news" type="email" required placeholder="بريدك" aria-label="البريد">
+					<button class="zaxs-btn" type="submit">اشترك</button>
+				</div>
+				<p data-news-ok hidden>تمام.. صرت من أول الناس.</p>
+			</form>
+		</div>
+		<div>
+			<h3>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 7h15l-1.4 9H8L6 7z"/><path d="M6 7L5 4H2"/></svg>
+				المتجر
+			</h3>
+			<a href="{{ store.url }}#all" data-zaxs-shop>كل الهوديز</a>
+			<a href="{{ store.url }}#new">وصل حديثًا</a>
+			<a href="{{ store.url }}#bestsellers">الأكثر طلبًا</a>
+		</div>
+		<div>
+			<h3>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20L12 4l8 16"/><path d="M8.5 14h7"/></svg>
+				ZAXS
+			</h3>
+			<a href="{{ store.url }}#story">قصتنا</a>
+			<a href="{{ store.url }}#faq">تواصل معنا</a>
+		</div>
+		<div>
+			<h3>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.1.9-1.1 1.8V14"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+				خدمة العملاء
+			</h3>
+			<a href="{{ store.url }}#faq">الأسئلة الشائعة</a>
+			<a href="{{ store.url }}#faq">الشحن</a>
+			<a href="{{ store.url }}#faq">الاستبدال والاسترجاع</a>
+		</div>
+	</div>
+	<div class="container zaxs-foot__bottom">
+		<span>ZAXS · السعودية</span>
+		<span class="zaxs-social">
+			<salla-social data-testid="store-footer-social"></salla-social>
+		</span>
+	</div>
+	<div class="container zaxs-foot__pay">
+		<span class="copyright-text">{% hook copyright %}</span>
+		<salla-payments data-testid="store-footer-payments"></salla-payments>
+	</div>
+</footer>

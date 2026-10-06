@@ -1,0 +1,31 @@
+<article class="zaxs-look__card{{ plain ? ' is-plain' : '' }}">
+  <div class="zaxs-look__media">
+    <a class="zaxs-look__hit" {% if plain %}data-zaxs-shop{% else %}data-zaxs-shop data-zaxs-look{% endif %} href="{{ href|default(shop) }}">
+      <img class="zaxs-look__front" src="{{ img }}" alt="{{ name }}" width="900" height="1200" loading="lazy">
+      {% if not plain %}
+      <img class="zaxs-look__back" src="{{ back|default('images/zaxs/hoodie-olive-back.jpg'|asset) }}" alt="" width="900" height="1200" loading="lazy">
+      {% endif %}
+    </a>
+    {% if not plain %}
+    <span class="zaxs-look__heart" aria-hidden="true">♡</span>
+    <div class="zaxs-look__quick">
+      <p>اختر المقاس</p>
+      <div class="zaxs-sizes" role="group" aria-label="المقاس">
+        <button type="button">S</button>
+        <button type="button">M</button>
+        <button type="button">L</button>
+        <button type="button">XL</button>
+        <button type="button">XXL</button>
+      </div>
+      <a class="zaxs-look__add" data-zaxs-shop data-zaxs-look href="{{ href|default(shop) }}">أضف للسلة</a>
+    </div>
+    {% endif %}
+  </div>
+  <a class="zaxs-look__meta" {% if plain %}data-zaxs-shop{% else %}data-zaxs-shop data-zaxs-look{% endif %} href="{{ href|default(shop) }}">
+    <span class="zaxs-look__names">
+      <b>{{ name }}</b>
+      {% if en %}<em class="zaxs-look__en">{{ en }}</em>{% endif %}
+    </span>
+    {% if price %}<span class="zaxs-look__price">{{ price }} ر.س</span>{% endif %}
+  </a>
+</article>

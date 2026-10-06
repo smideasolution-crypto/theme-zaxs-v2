@@ -1,0 +1,30 @@
+{#
+| Variable              | Type   | Description                                      |
+|-----------------------|--------|--------------------------------------------------|
+| component.eyebrow     | string | Small label above the title                      |
+| component.title       | string | Main heading                                     |
+| component.description | string | Supporting copy                                  |
+| component.cta_text    | string | Button label                                     |
+| component.cta_url     | string | Button link                                      |
+| component.image       | string | Background image URL                             |
+| position              | int    | Sorting number start from zero                   |
+#}
+<section component-id="{{ componentId }}" class="zaxs-hero" data-testid="store-home-zaxs-hero">
+    {% if component.image %}
+        <div class="zaxs-hero__media">
+            <img src="{{ component.image }}" alt="{{ component.title|default(store.name) }}">
+        </div>
+    {% endif %}
+    <div class="zaxs-hero__content">
+        {% if component.eyebrow %}
+            <p class="zaxs-hero__eyebrow">{{ component.eyebrow }}</p>
+        {% endif %}
+        <h2 class="zaxs-hero__title">{{ component.title|default('ZAXS') }}</h2>
+        {% if component.description %}
+            <p class="zaxs-hero__subtitle">{{ component.description }}</p>
+        {% endif %}
+        {% if component.cta_text %}
+            <a class="zaxs-btn" href="{{ component.cta_url|default(store.url ~ '/products') }}">{{ component.cta_text }}</a>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,80 @@
+{# ZAXS chrome — sticky announce + icon bar matching the designed storefront. #}
+{% set shop = store.url %}
+<header data-testid="store-header" class="store-header zaxs-chrome{{ is_page('index') ? ' is-home' : ' is-inner' }}">
+  <div class="zaxs-loader" data-zaxs-loader aria-hidden="true">
+    <div class="zaxs-loader__inner">
+      <img class="zaxs-loader__mark" src="{{ 'images/zaxs/zaxs-mark.png'|asset }}" alt="" width="72" height="72">
+      <div class="zaxs-loader__bar"><i></i></div>
+      <small>ZAXS</small>
+    </div>
+  </div>
+  <div class="zaxs-announce" data-announce aria-hidden="true">
+    <div class="zaxs-announce__track">
+      <div class="zaxs-announce__group">
+        <span>NEW DROP</span>
+        <span>هوديز ZAXS</span>
+        <span>MADE FOR YOU</span>
+        <span>شحن داخل السعودية</span>
+        <span>ستايلك في الشارع</span>
+        <span>من القهوة.. لآخر طلعة</span>
+      </div>
+      <div class="zaxs-announce__group" aria-hidden="true">
+        <span>NEW DROP</span>
+        <span>هوديز ZAXS</span>
+        <span>MADE FOR YOU</span>
+        <span>شحن داخل السعودية</span>
+        <span>ستايلك في الشارع</span>
+        <span>من القهوة.. لآخر طلعة</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="zaxs-header" data-zaxs-header>
+    <div class="zaxs-header__inner">
+      <button class="zaxs-icon zaxs-header__menu" type="button" data-zaxs-open-menu aria-label="القائمة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="zaxs-nav" aria-label="القائمة الرئيسية">
+        <a class="{{ is_page('index') ? 'is-active' : '' }}" href="{{ store.url }}">الرئيسية</a>
+        <a class="{{ is_page('product.index') or is_page('product.single') ? 'is-active' : '' }}" data-zaxs-shop href="{{ shop }}#all">المتجر</a>
+        <a href="{{ is_page('index') ? '#new' : store.url ~ '#new' }}">الجديد</a>
+        <a href="{{ is_page('index') ? '#story' : store.url ~ '#story' }}">قصتنا</a>
+        <a href="{{ is_page('index') ? '#faq' : store.url ~ '#faq' }}">الأسئلة</a>
+      </nav>
+      <a class="zaxs-brand" href="{{ store.url }}">
+        <img src="{{ 'images/zaxs/zaxs-logo.png'|asset }}" alt="ZAXS" width="120" height="28">
+        {% if is_page('index') %}<h1 class="sr-only">{{ store.name }}</h1>{% else %}<h2 class="sr-only">{{ store.name }}</h2>{% endif %}
+      </a>
+      <div class="zaxs-header__actions">
+        <button class="zaxs-icon" type="button" data-zaxs-search aria-label="بحث">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </button>
+        <salla-user-menu data-testid="store-header-user-menu" avatar-only show-header show-trigger></salla-user-menu>
+        <a class="zaxs-icon" href="{{ store.url }}/wishlist" aria-label="المفضلة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.4-9.2-8.2C1 8.6 2.6 5 6.2 5c2 0 3.3 1.1 3.8 2.1C10.5 6.1 11.8 5 13.8 5c3.6 0 5.2 3.6 3.4 6.8C19 15.6 12 20 12 20z"/></svg>
+        </a>
+        <salla-cart-summary data-testid="store-header-cart">
+          <span slot="icon" class="zaxs-icon zaxs-icon--static">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 7h15l-1.4 9H8L6 7z"/><path d="M6 7L5 4H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+          </span>
+        </salla-cart-summary>
+      </div>
+    </div>
+  </div>
+
+  <div class="zaxs-mnav" data-zaxs-mnav hidden>
+    <div class="zaxs-mnav__panel">
+      <button class="zaxs-icon" type="button" data-zaxs-close-menu aria-label="إغلاق">✕</button>
+      <nav>
+        <a href="{{ store.url }}">الرئيسية</a>
+        <a data-zaxs-shop href="{{ shop }}#all">المتجر</a>
+        <a href="{{ store.url }}#new">وصل حديثًا</a>
+        <a href="{{ store.url }}#bestsellers">الأكثر طلبًا</a>
+        <a href="{{ store.url }}#story">قصتنا</a>
+        <a href="{{ store.url }}#faq">تواصل معنا</a>
+        <a href="{{ store.url }}/wishlist">المفضلة</a>
+      </nav>
+    </div>
+  </div>
+  <nav id="mobile-menu" hidden></nav>
+</header>

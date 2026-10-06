@@ -1,0 +1,307 @@
+{# ZAXS homepage — bundled look images so the design shows on any store. #}
+{% set z_hero_kicker = theme.settings.get('zaxs_hero_kicker', 'NEW DROP') %}
+{% set z_hero_title = theme.settings.get('zaxs_hero_title', 'أكثر من مجرد هودي.') %}
+{% set z_hero_sub = theme.settings.get('zaxs_hero_sub', 'ستايلك في الشارع. من القهوة.. لآخر طلعة.') %}
+{% set z_hero_cta = theme.settings.get('zaxs_hero_cta', 'تسوق المجموعة') %}
+{% set z_hero_cta2 = theme.settings.get('zaxs_hero_cta2', 'قصتنا') %}
+{% set z_hero_desk = theme.settings.get('zaxs_hero_desktop') %}
+{% set z_life = theme.settings.get('zaxs_lifestyle') %}
+{% set z_story_img = theme.settings.get('zaxs_story_image') %}
+{% set img_hero = z_hero_desk ? z_hero_desk : ('images/zaxs/catalog/hero.jpg'|asset) %}
+{% set img_statement = z_story_img ? z_story_img : ('images/zaxs/look-back.jpg'|asset) %}
+{% set img_focus = 'images/zaxs/hoodie-olive.jpg'|asset %}
+{% set img_life = z_life ? z_life : ('images/zaxs/lifestyle-city.jpg'|asset) %}
+{% set img_story = z_story_img ? z_story_img : ('images/zaxs/rooftop.jpg'|asset) %}
+{% set back = 'images/zaxs/hoodie-olive-back.jpg'|asset %}
+{% set shop = store.url %}
+
+<section class="zaxs-hero" data-testid="store-home-zaxs-campaign" data-hero>
+  <div class="zaxs-hero__media" data-hero-slides>
+    <img class="is-on" src="{{ img_hero }}" alt="ZAXS" width="1920" height="1080" fetchpriority="high">
+    <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="1920" height="1080">
+    <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="1920" height="1080">
+    <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="1920" height="1080">
+  </div>
+  <div class="zaxs-hero__copy">
+    <img class="zaxs-hero__mark" src="{{ 'images/zaxs/zaxs-mark.png' | asset }}" alt="">
+    <p class="zaxs-kicker" data-hero-kicker>
+      <span class="is-on">{{ z_hero_kicker }}</span>
+      <span>ستايلك في الشارع</span>
+      <span>MADE FOR YOU</span>
+    </p>
+    <h1><span>{{ z_hero_title|nl2br }}</span></h1>
+    <p class="zaxs-lede">{{ z_hero_sub|nl2br }}</p>
+    <div class="zaxs-hero__cta">
+      <a class="zaxs-btn" href="#fresh">{{ z_hero_cta }}</a>
+      <a class="zaxs-btn zaxs-btn--ghost" href="#story">{{ z_hero_cta2 }}</a>
+    </div>
+  </div>
+  <div class="zaxs-hero__dots" data-hero-dots></div>
+</section>
+
+<nav class="zaxs-qs zaxs-qs--five" aria-label="تسوق سريع">
+  <a class="zaxs-qs__tile" href="#fresh">
+    <span>01</span>
+    <strong>وصل حديث</strong>
+    <em>آخر تصوير</em>
+    <small>أربع قطع</small>
+  </a>
+  <a class="zaxs-qs__tile" href="#hoodies">
+    <span>02</span>
+    <strong>هودي</strong>
+    <em>سبع ألوان</em>
+    <small>نفس القصّة</small>
+  </a>
+  <a class="zaxs-qs__tile" href="#zips">
+    <span>03</span>
+    <strong>سويت شيرت</strong>
+    <em>سوستة كاملة</em>
+    <small>من فوق لتحت</small>
+  </a>
+  <a class="zaxs-qs__tile" href="#pants">
+    <span>04</span>
+    <strong>بنطلون</strong>
+    <em>نفس الطقم</em>
+    <small>خمسة ألوان</small>
+  </a>
+  <a class="zaxs-qs__tile" href="#half">
+    <span>05</span>
+    <strong>نص سوستة</strong>
+    <em>ياقة قصيرة</em>
+    <small>أربعة ألوان</small>
+  </a>
+</nav>
+
+<section class="zaxs-block zaxs-block--light" id="fresh">
+  <div class="container">
+    <div class="zaxs-sec-head">
+      <h2>وصل حديث.</h2>
+      <p>أربع قطع من آخر تصوير.</p>
+      <a href="#all" data-zaxs-shop>عرض الكل</a>
+    </div>
+    <div class="zaxs-look">
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-black.jpg'|asset, name: 'سويت شيرت ZAXS أسود' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset, name: 'هودي ZAXS عنابي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي' } %}
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-block" id="hoodies">
+  <div class="container">
+    <div class="zaxs-sec-head">
+      <h2>هودي.</h2>
+      <p>سبع ألوان. نفس القصّة.</p>
+      <a href="#all" data-zaxs-shop>عرض الكل</a>
+    </div>
+    <div class="zaxs-look">
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-black.jpg'|asset, name: 'هودي ZAXS أسود' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset, name: 'هودي ZAXS عنابي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-olive.jpg'|asset, name: 'هودي ZAXS زيتي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-grey.jpg'|asset, name: 'هودي ZAXS رمادي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-white.jpg'|asset, name: 'هودي ZAXS أبيض' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-pink.jpg'|asset, name: 'هودي ZAXS بينك' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-blue.jpg'|asset, name: 'هودي ZAXS لبني' } %}
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-block zaxs-block--light" id="zips">
+  <div class="container">
+    <div class="zaxs-sec-head">
+      <h2>سويت شيرت.</h2>
+      <p>سوستة كاملة، من فوق لتحت.</p>
+      <a href="#all" data-zaxs-shop>عرض الكل</a>
+    </div>
+    <div class="zaxs-look">
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-black.jpg'|asset, name: 'سويت شيرت ZAXS أسود' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-burgundy.jpg'|asset, name: 'سويت شيرت ZAXS عنابي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-chenille.jpg'|asset, name: 'سويت شيرت ZAXS شانيه 2' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-olive.jpg'|asset, name: 'سويت شيرت ZAXS زيتي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-grey.jpg'|asset, name: 'سويت شيرت ZAXS رمادي' } %}
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-block" id="pants">
+  <div class="container">
+    <div class="zaxs-sec-head">
+      <h2>بنطلون.</h2>
+      <p>نفس ألوان الطقم.</p>
+      <a href="#all" data-zaxs-shop>عرض الكل</a>
+    </div>
+    <div class="zaxs-look">
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-black.jpg'|asset, name: 'بنطلون ZAXS أسود' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-chenille.jpg'|asset, name: 'بنطلون ZAXS شانيه 2' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-olive.jpg'|asset, name: 'بنطلون ZAXS زيتي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-lead.jpg'|asset, name: 'بنطلون ZAXS شانيه 8 رصاصي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي' } %}
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-block zaxs-block--light" id="half">
+  <div class="container">
+    <div class="zaxs-sec-head">
+      <h2>نص سوستة.</h2>
+      <p>ياقة قصيرة وسوستة للنص.</p>
+      <a href="#all" data-zaxs-shop>عرض الكل</a>
+    </div>
+    <div class="zaxs-look">
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-black.jpg'|asset, name: 'نص سوستة ZAXS أسود' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-brown.jpg'|asset, name: 'نص سوستة ZAXS بني' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-burgundy.jpg'|asset, name: 'نص سوستة ZAXS عنابي' } %}
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-story" id="story">
+  <div class="zaxs-story__bleed">
+    <img src="{{ img_story }}" alt="ZAXS" width="1600" height="900" loading="lazy">
+    <div class="zaxs-story__copy">
+      <p class="zaxs-kicker">قصتنا</p>
+      <h2>بدأت بفكرة<br>بسيطة.</h2>
+      <p>أن أبسط قطعة ممكن تعكس شخصيتك.</p>
+      <p>ZAXS لجيل يبحث عن التميز بطريقته، بعيدًا عن التعقيد والمبالغة.</p>
+      <small>MADE FOR YOU.</small>
+    </div>
+  </div>
+  <div class="container zaxs-story__more">
+    <article>
+      <h3>لماذا الهودي؟</h3>
+      <p>القصّات. الألوان. التفاصيل. طريقة اللبس. كل شخص يأخذ نفس القطعة ويجعلها بطريقته.</p>
+    </article>
+    <article>
+      <h3>التصميم والشخصية</h3>
+      <p>من فكرة بسيطة إلى علامة لجيل يبحث عن التميز والحرية في تفاصيله. مو كل هودي يشبهك.</p>
+    </article>
+    <article>
+      <h3>تفاصيل ZAXS</h3>
+      <p>قطع بسيطة في شكلها. واضحة في حضورها. تفاصيل بسيطة. فرق واضح.</p>
+    </article>
+  </div>
+</section>
+
+<section class="zaxs-ugc">
+  <div class="container">
+    <div class="zaxs-ugc__head">
+      <p class="zaxs-kicker">LOOKBOOK</p>
+      <h2>ZAXS ON PEOPLE</h2>
+      <p>بطريقتهم. في الشارع.</p>
+    </div>
+  </div>
+  {# أضف صور جديدة هنا داخل الـ track — انسخ <figure> وخلاص #}
+  <div class="zaxs-ugc__rail" aria-label="ZAXS على الناس">
+    <div class="zaxs-ugc__track">
+      <figure>
+        <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>01</span><em>قهوة</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/youth.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>02</span><em>الشارع</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>03</span><em>الظهر</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>04</span><em>آخر طلعة</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/lifestyle-city.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>05</span><em>المدينة</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/rooftop.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>06</span><em>السطح</em></figcaption>
+      </figure>
+      {# نسخة للتكرار السلس — نفس الصور #}
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>01</span><em>قهوة</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/youth.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>02</span><em>الشارع</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>03</span><em>الظهر</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>04</span><em>آخر طلعة</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/lifestyle-city.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>05</span><em>المدينة</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/rooftop.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>06</span><em>السطح</em></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="container zaxs-ugc__actions">
+    <a class="zaxs-btn" href="#all" data-zaxs-shop>شوف المجموعة</a>
+  </div>
+</section>
+
+<section class="zaxs-faq" id="faq">
+  <div class="container zaxs-faq__layout">
+    <div class="zaxs-faq__intro">
+      <img class="zaxs-faq__mark" src="{{ 'images/zaxs/zaxs-mark.png' | asset }}" alt="">
+      <p class="zaxs-kicker">FAQ</p>
+      <h2>أسئلة<br>تتكرر.</h2>
+      <p>كل اللي تحتاجه قبل الطلب. المقاس، الشحن، والدفع.</p>
+      <a class="zaxs-btn" href="{{ store.url }}/contact">تواصل معنا</a>
+    </div>
+    <div class="zaxs-faq__list">
+      <details open><summary>كيف أطلب؟</summary><p>اختر الهودي واللون والمقاس، ثم أضف للسلة وأكمل الطلب.</p></details>
+      <details><summary>كيف أختار مقاسي؟</summary><p>المقاسات من خيارات المنتج. استخدم دليل المقاسات في صفحة الهودي.</p></details>
+      <details><summary>وش المتوفر؟</summary><p>هودي، سوستة كاملة، بنطلون، ونص سوستة. الألوان والمقاسات حسب المتوفر في سلة.</p></details>
+      <details><summary>الشحن داخل السعودية؟</summary><p>التفاصيل من صفحة الشحن وسياسة المتجر على سلة.</p></details>
+      <details><summary>أقدر أستبدل؟</summary><p>حسب سياسة الاستبدال والاسترجاع في المتجر.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="zaxs-trust">
+  <div class="container zaxs-trust__row">
+    <p>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 11h18M7 7V5h10v2"/></svg>
+      شحن داخل السعودية
+    </p>
+    <p>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V8a4 4 0 0 1 8 0v2"/></svg>
+      دفع آمن
+    </p>
+    <p>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h10M14 12l-3-3M14 12l-3 3M20 6v12"/></svg>
+      استبدال حسب السياسة
+    </p>
+    <p>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 19l2.2-6.4A8 8 0 1 1 12 20H5z"/></svg>
+      دعم مباشر
+    </p>
+  </div>
+</section>
+
+<section class="zaxs-band" aria-label="ZAXS">
+  <div class="zaxs-band__track">
+    <span>MADE FOR YOU</span>
+    <span>ZAXS</span>
+    <span>من القهوة.. لآخر طلعة</span>
+    <span>ستايلك في الشارع</span>
+    <span>NEW DROP</span>
+    <span>MADE FOR YOU</span>
+    <span>ZAXS</span>
+    <span>من القهوة.. لآخر طلعة</span>
+    <span>ستايلك في الشارع</span>
+    <span>NEW DROP</span>
+  </div>
+</section>
