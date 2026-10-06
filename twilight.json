@@ -1,13 +1,10 @@
 {
     "name": {
-        "ar": "زاكس",
-        "en": "ZAXS"
+        "ar": "زاكس ٢",
+        "en": "ZAXS V2"
     },
-    "version": "1.0.0",
-    "theme_name": "ZAXS",
     "repository": "https://github.com/smideasolution-crypto/theme-zaxs-v2",
-    "repo_url": "https://github.com/smideasolution-crypto/theme-zaxs-v2",
-    "author_email": "smideasolution-crypto@users.noreply.github.com",
+    "author_email": "support@salla.sa",
     "features": [
         "mega-menu",
         "fonts",
@@ -21,6 +18,7 @@
         "component-photos-slider",
         "component-parallax-background",
         "component-testimonials",
+        "component-random-testimonials",
         "component-square-photos",
         "component-store-features",
         "component-youtube",
@@ -1449,7 +1447,7 @@
             ]
         }
     ],
-    "support_url": "https://github.com/smideasolution-crypto/theme-zaxs-v2",
+    "support_url": "https://salla.com/",
     "description": {
         "ar": "مجموعة كبيرة من المزايا لدعم تجارتك وتقديم تجربة تسوق مثيرة لعملائك",
         "en": "A wide range of features to support your business and provide an exciting shopping experience for your customers"
