@@ -11,16 +11,16 @@
 {% set img_statement = z_story_img ? z_story_img : ('images/zaxs/look-back.jpg'|asset) %}
 {% set img_focus = 'images/zaxs/hoodie-olive.jpg'|asset %}
 {% set img_life = z_life ? z_life : ('images/zaxs/lifestyle-city.jpg'|asset) %}
-{% set img_story = z_story_img ? z_story_img : ('images/zaxs/rooftop.jpg'|asset) %}
+{% set img_story = z_story_img ? z_story_img : ('images/zaxs/catalog/story.jpg'|asset) %}
 {% set back = 'images/zaxs/hoodie-olive-back.jpg'|asset %}
 {% set shop = store.url %}
 
 <section class="zaxs-hero" data-testid="store-home-zaxs-campaign" data-hero>
   <div class="zaxs-hero__media" data-hero-slides>
     <img class="is-on" src="{{ img_hero }}" alt="ZAXS" width="1920" height="1080" fetchpriority="high">
-    <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="1920" height="1080">
-    <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="1920" height="1080">
-    <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="1920" height="1080">
+    <img src="{{ 'images/zaxs/catalog/zip-olive.jpg'|asset }}" alt="" width="1920" height="1080">
+    <img src="{{ 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset }}" alt="" width="1920" height="1080">
+    <img src="{{ 'images/zaxs/catalog/half-green.jpg'|asset }}" alt="" width="1920" height="1080">
   </div>
   <div class="zaxs-hero__copy">
     <img class="zaxs-hero__mark" src="{{ 'images/zaxs/zaxs-mark.png' | asset }}" alt="">
@@ -82,8 +82,8 @@
     <div class="zaxs-look">
       {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/zip-black.jpg'|asset, name: 'سويت شيرت ZAXS أسود' } %}
       {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset, name: 'هودي ZAXS عنابي' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري', focus: 'center 20%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي', focus: 'center 40%' } %}
     </div>
   </div>
 </section>
@@ -132,11 +132,11 @@
       <a href="#all" data-zaxs-shop>عرض الكل</a>
     </div>
     <div class="zaxs-look">
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-black.jpg'|asset, name: 'بنطلون ZAXS أسود' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-chenille.jpg'|asset, name: 'بنطلون ZAXS شانيه 2' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-olive.jpg'|asset, name: 'بنطلون ZAXS زيتي' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-lead.jpg'|asset, name: 'بنطلون ZAXS شانيه 8 رصاصي' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-black.jpg'|asset, name: 'بنطلون ZAXS أسود', focus: 'center 40%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-chenille.jpg'|asset, name: 'بنطلون ZAXS شانيه 2', focus: 'center 40%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-olive.jpg'|asset, name: 'بنطلون ZAXS زيتي', focus: 'center 40%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-lead.jpg'|asset, name: 'بنطلون ZAXS شانيه 8 رصاصي', focus: 'center 40%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/pants-grey.jpg'|asset, name: 'بنطلون ZAXS رمادي', focus: 'center 40%' } %}
     </div>
   </div>
 </section>
@@ -149,10 +149,10 @@
       <a href="#all" data-zaxs-shop>عرض الكل</a>
     </div>
     <div class="zaxs-look">
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-black.jpg'|asset, name: 'نص سوستة ZAXS أسود' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-brown.jpg'|asset, name: 'نص سوستة ZAXS بني' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري' } %}
-      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-burgundy.jpg'|asset, name: 'نص سوستة ZAXS عنابي' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-black.jpg'|asset, name: 'نص سوستة ZAXS أسود', focus: 'center 22%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-brown.jpg'|asset, name: 'نص سوستة ZAXS بني', focus: 'center 22%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-green.jpg'|asset, name: 'نص سوستة ZAXS جنزاري', focus: 'center 22%' } %}
+      {% include 'components.home.zaxs-look-card' with { plain: true, shop: shop, img: 'images/zaxs/catalog/half-burgundy.jpg'|asset, name: 'نص سوستة ZAXS عنابي', focus: 'center 22%' } %}
     </div>
   </div>
 </section>
@@ -196,53 +196,69 @@
   <div class="zaxs-ugc__rail" aria-label="ZAXS على الناس">
     <div class="zaxs-ugc__track">
       <figure>
-        <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>01</span><em>قهوة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hero.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>01</span><em>أسود</em></figcaption>
       </figure>
       <figure>
-        <img src="{{ 'images/zaxs/youth.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>02</span><em>الشارع</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/zip-olive.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>02</span><em>زيتي</em></figcaption>
       </figure>
       <figure>
-        <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>03</span><em>الظهر</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>03</span><em>عنابي</em></figcaption>
       </figure>
       <figure>
-        <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>04</span><em>آخر طلعة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-white.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>04</span><em>أبيض</em></figcaption>
       </figure>
       <figure>
-        <img src="{{ 'images/zaxs/lifestyle-city.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>05</span><em>المدينة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-pink.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>05</span><em>بينك</em></figcaption>
       </figure>
       <figure>
-        <img src="{{ 'images/zaxs/rooftop.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>06</span><em>السطح</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/half-green.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>06</span><em>جنزاري</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/catalog/hoodie-blue.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>07</span><em>لبني</em></figcaption>
+      </figure>
+      <figure>
+        <img src="{{ 'images/zaxs/catalog/zip-grey.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>08</span><em>رمادي</em></figcaption>
       </figure>
       {# نسخة للتكرار السلس — نفس الصور #}
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/look-coffee.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>01</span><em>قهوة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hero.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>01</span><em>أسود</em></figcaption>
       </figure>
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/youth.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>02</span><em>الشارع</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/zip-olive.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>02</span><em>زيتي</em></figcaption>
       </figure>
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/look-back.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>03</span><em>الظهر</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-burgundy.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>03</span><em>عنابي</em></figcaption>
       </figure>
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/night.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>04</span><em>آخر طلعة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-white.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>04</span><em>أبيض</em></figcaption>
       </figure>
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/lifestyle-city.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>05</span><em>المدينة</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/hoodie-pink.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>05</span><em>بينك</em></figcaption>
       </figure>
       <figure aria-hidden="true">
-        <img src="{{ 'images/zaxs/rooftop.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
-        <figcaption><span>06</span><em>السطح</em></figcaption>
+        <img src="{{ 'images/zaxs/catalog/half-green.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>06</span><em>جنزاري</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/catalog/hoodie-blue.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>07</span><em>لبني</em></figcaption>
+      </figure>
+      <figure aria-hidden="true">
+        <img src="{{ 'images/zaxs/catalog/zip-grey.jpg'|asset }}" alt="" width="640" height="800" loading="lazy">
+        <figcaption><span>08</span><em>رمادي</em></figcaption>
       </figure>
     </div>
   </div>
