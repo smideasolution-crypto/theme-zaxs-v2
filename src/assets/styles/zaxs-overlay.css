@@ -106,6 +106,7 @@ footer.store-footer,
 @media (max-width:1100px){
   .zaxs-qs--five{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
   .zaxs-qs--five .zaxs-qs__tile{min-width:220px;flex:0 0 220px;scroll-snap-align:start}
+  .zaxs-palette__row{grid-template-columns:repeat(4,1fr)}
 }
 .zaxs-qs__tile{
   display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto auto;column-gap:.85rem;align-items:center;
@@ -340,7 +341,7 @@ footer.store-footer.zaxs-footer{
 .theme-zaxs .zaxs-block .s-products-list-wrapper > *:nth-child(n+5){display:none}
 .theme-zaxs .icon-btn,.theme-zaxs .mburger{min-width:44px;min-height:44px}
 
-.zaxs-look{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 18px}
+.zaxs-look{display:grid;grid-template-columns:repeat(4,1fr);gap:22px 16px}
 .zaxs-palette{background:#12140e;color:#f3eee4;padding:64px 0;transition:background .7s cubic-bezier(.16,1,.3,1);position:relative;z-index:0;overflow:hidden}
 .zaxs-palette h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:.3rem 0 8px;line-height:1.35}
 .zaxs-palette > .container > p{color:#b7b0a3;margin-bottom:28px;line-height:1.6}
@@ -367,7 +368,7 @@ footer.store-footer.zaxs-footer{
 @keyframes zaxs-palette-marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
 @keyframes zaxs-palette-marquee-rev{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
 .zaxs-palette > .container{position:relative;z-index:1}
-.zaxs-palette__row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative;z-index:1}
+.zaxs-palette__row{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;position:relative;z-index:1}
 .zaxs-palette__row a{color:#0b0b0b;text-decoration:none;text-align:center;z-index:0}
 .zaxs-palette__row img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#ece6d8;display:block;margin-bottom:8px}
 @media (max-width:768px){
@@ -656,21 +657,19 @@ html,body#app,.theme-zaxs,.theme-zaxs .app-inner{overflow:visible!important;tran
 .zaxs-look__card{display:block;color:#0b0b0b;background:transparent;transition:transform .45s}
 .zaxs-look__card:hover{transform:translateY(-6px)}
 .zaxs-look__card.is-plain:hover{transform:none}
-.zaxs-look__card.is-plain .zaxs-look__front,
-.zaxs-look__card.is-plain:hover .zaxs-look__front{
-  padding:0;opacity:1;object-fit:cover;object-position:center 8%;
-  width:178%;height:178%;max-width:none;inset:auto;top:-2%;
-  left:50%;right:auto;transform:translateX(-50%);background:#fff
+.zaxs-look__card.is-shop{background:transparent}
+.zaxs-look__card.is-shop:hover{transform:none}
+.zaxs-look__card.is-shop .zaxs-look__media{aspect-ratio:1/1.08;background:#f4efe6}
+.zaxs-look__card.is-shop .zaxs-look__front,
+.zaxs-look__card.is-shop:hover .zaxs-look__front{
+  position:absolute;inset:0;width:100%;height:100%;max-width:none;
+  object-fit:contain;object-position:center;padding:7% 8% 4%;
+  opacity:1;transform:none;background:#f4efe6
 }
-.zaxs-look__card.is-plain.is-bust .zaxs-look__front,
-.zaxs-look__card.is-plain.is-bust:hover .zaxs-look__front{
-  width:148%;height:148%;top:0;object-position:center 18%
+.zaxs-look__card.is-shop .zaxs-look__quick{
+  position:static;z-index:1;background:transparent;box-shadow:none;padding:12px 0 0
 }
-.zaxs-look__card.is-plain.is-waist .zaxs-look__front,
-.zaxs-look__card.is-plain.is-waist:hover .zaxs-look__front{
-  width:155%;height:155%;top:-4%;object-position:center 42%
-}
-.zaxs-look__media{position:relative;background:#fff;border:0;aspect-ratio:3/4;overflow:hidden}
+.zaxs-look__media{position:relative;background:#f4efe6;border:0;aspect-ratio:3/4;overflow:hidden}
 .zaxs-look__hit{display:block;position:absolute;inset:0;z-index:1}
 .zaxs-look__front,.zaxs-look__back{
   position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8% 8% 36%;
@@ -685,7 +684,7 @@ html,body#app,.theme-zaxs,.theme-zaxs .app-inner{overflow:visible!important;tran
   background:#f3eee4;color:#111;padding:12px;box-shadow:0 -18px 36px rgba(0,0,0,.16)
 }
 .zaxs-look__quick p{font-size:11px;letter-spacing:.08em;margin:0 0 8px;color:#5c574c;font-weight:600;line-height:1.4}
-.zaxs-sizes{display:flex;gap:4px}
+.zaxs-sizes{display:flex;gap:4px;direction:ltr}
 .zaxs-sizes button,.zaxs-sizes span{
   flex:1;height:40px;display:grid;place-items:center;border:1px solid rgba(17,17,17,.2);
   background:#fff;color:#111;font-size:12px;font-weight:600;cursor:pointer;padding:0;line-height:1;font-family:inherit
@@ -702,19 +701,19 @@ html,body#app,.theme-zaxs,.theme-zaxs .app-inner{overflow:visible!important;tran
   padding:14px 2px 0;background:transparent;text-decoration:none;color:inherit
 }
 .zaxs-look__names{display:flex;flex-direction:column;gap:4px;min-width:0}
-.zaxs-look__names b{font-size:15px;line-height:1.35;font-weight:600}
-.zaxs-look__tone{display:block;margin-top:3px;font-style:normal;font-size:18px;line-height:1.3;font-weight:700;color:#1c140f}
-.zaxs-look__en{display:block;font-style:normal;font-size:11px;letter-spacing:.14em;color:#6b665c;line-height:1.4}
+.zaxs-look__names b{font-size:15px;line-height:1.35;font-weight:700}
+.zaxs-look__en{display:block;font-style:normal;font-size:12px;letter-spacing:.04em;color:#8a8478;line-height:1.4}
 .zaxs-look__price{font-size:14px;line-height:1.35;white-space:nowrap;color:#0b0b0b}
 
 .zaxs-palette{background:#12140e;color:#f3eee4;transition:background .7s cubic-bezier(.16,1,.3,1)}
 .zaxs-palette > .container > p{color:#b7b0a3}
 .zaxs-palette__row a{color:#111;background:#ece6d8;position:relative;overflow:hidden;z-index:0;transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .45s}
 .zaxs-palette__row a:hover,.zaxs-palette__row a:focus-visible{transform:translateY(-4px);z-index:1;box-shadow:0 12px 28px rgba(0,0,0,.22)}
-.zaxs-palette__row img{object-fit:contain;padding:10% 8% 28%;margin:0;background:#ece6d8}
-.zaxs-palette__row b,.zaxs-palette__row em{position:absolute;bottom:10px;font-size:13px}
-.zaxs-palette__row b{inset-inline-start:10px}
-.zaxs-palette__row em{inset-inline-end:10px;font-style:normal;letter-spacing:.12em;font-size:11px;color:#5c574c}
+.zaxs-palette__row a{display:flex;flex-direction:column;background:#f3eee4;padding:0 0 12px;text-align:center}
+.zaxs-palette__row img{width:100%;aspect-ratio:1/1.15;object-fit:contain;padding:8% 8% 4%;margin:0;background:#f6f1e8}
+.zaxs-palette__row b,.zaxs-palette__row em{position:static;font-size:13px}
+.zaxs-palette__row b{display:block;margin-top:8px;font-weight:700}
+.zaxs-palette__row em{display:block;font-style:normal;letter-spacing:.04em;font-size:11px;color:#8a8478}
 
 .theme-zaxs .s-product-card,.theme-zaxs custom-salla-product-card{
   background:transparent!important;box-shadow:none!important;border-radius:0!important;color:#0b0b0b

@@ -321,7 +321,7 @@ function initPalette() {
   if (!strip || !section) return;
 
   // Match preview tint(hex, 0.42) — order follows campaign row: white → grey → stone → olive → black
-  const hexes = ["#f3eee4", "#6d6a64", "#cbbca6", "#3a4126", "#111111"];
+  const hexes = ["#1c1c1c", "#5c2433", "#2c4634", "#6e6e6e", "#f4f0e8", "#e7b4c8", "#a9c9d8"];
   const tint = (hex, a = 0.42) => {
     const n = parseInt(String(hex).replace("#", ""), 16);
     if (Number.isNaN(n)) return "#12140e";
@@ -341,7 +341,7 @@ function initPalette() {
     a.addEventListener("focus", () => paint(hex));
   });
   // Default to olive like the preview (COLORS[1])
-  paint(hexes[3]);
+  paint(hexes[2]);
 }
 
 function initSmoothAnchors() {

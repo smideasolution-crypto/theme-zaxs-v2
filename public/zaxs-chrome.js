@@ -111,7 +111,7 @@
     var section = document.querySelector(".zaxs-palette");
     if (!strip || !section) return;
 
-    var hexes = ["#f3eee4", "#6d6a64", "#cbbca6", "#3a4126", "#111111"];
+    var hexes = ["#1c1c1c", "#5c2433", "#2c4634", "#6e6e6e", "#f4f0e8", "#e7b4c8", "#a9c9d8"];
     function tint(hex, a) {
       a = a == null ? 0.42 : a;
       var n = parseInt(String(hex).replace("#", ""), 16);
@@ -136,7 +136,7 @@
         a.addEventListener("focus", function () { paint(hex); });
       })(panes[i], i);
     }
-    paint(hexes[3]);
+    paint(hexes[2]);
   }
 
   function initReveal() {
